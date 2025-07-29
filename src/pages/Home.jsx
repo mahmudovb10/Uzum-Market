@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+
 import Product from "../components/Product";
 import { usefetch } from "../hooks/useFetch";
+import axios from "axios";
+import Product from "../components/Product";
 
 function Home() {
   const [products, setProducts] = useState([]);
