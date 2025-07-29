@@ -1,20 +1,31 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import Product from "../components/Product"; // <-- to'g'ri yo'li
+import Product from "../components/Product";
+import { usefetch } from "../hooks/useFetch";
 
 function Home() {
   const [products, setProducts] = useState([]);
 
+  const { data, isPending, error } = usefetch("https://dummyjson.com/products");
+
   useEffect(() => {
-    axios("https://dummyjson.com/products")
-      .then(({ data }) => setProducts(data.products))
-      .catch((error) => console.error(error.message));
-  }, []);
+    if (data && data.products) {
+      setProducts(data.products);
+    }
+  }, [data]);
+
+  if (isPending) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="text-2xl font-semibold">Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">All Products</h1>
-
+      {isPending && <p>Loading...</p>}
+      {error && <p className="text-red-500">{error}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((prod) => (
           <Product key={prod.id} prod={prod} />

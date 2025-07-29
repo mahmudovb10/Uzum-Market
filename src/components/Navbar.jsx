@@ -23,7 +23,11 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="navbar-end"></div>
+        <div className="navbar-end">
+          <a href="">
+            <img src="/userLogo.svg" alt="" />
+          </a>
+        </div>
       </div>
     </header>
   );

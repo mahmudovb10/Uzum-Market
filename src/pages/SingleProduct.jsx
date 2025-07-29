@@ -1,19 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { usefetch } from "../hooks/useFetch";
 
 function SingleProduct() {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const [product, setProduct] = useState(null);
+  const {
+    data: product,
+    error,
+    isPending,
+  } = usefetch("https://dummyjson.com/products/" + id);
 
-  useEffect(() => {
-    axios("https://dummyjson.com/products/" + id)
-      .then(({ data }) => setProduct(data))
-      .catch((error) => console.error(error.message));
-  }, [id]);
-
-  if (!product) return <div className="text-center py-20">Loading...</div>;
+  if (isPending || !product) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="text-2xl font-semibold">Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-base-100 p-6 md:p-12">
