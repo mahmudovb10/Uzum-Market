@@ -20,7 +20,6 @@ import {
 import SingleProduct from "./pages/SingleProduct";
 
 // Components
-
 import { ProtectedRoutes } from "./components/ProtectedRoutes";
 
 function App() {

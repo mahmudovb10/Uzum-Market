@@ -44,3 +44,7 @@ input:focus-within {
   position: relative;
   top: 5rem;
 }
+
+a {
+  text-decoration: none;
+}
