@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { usefetch } from "../hooks/useFetch";
 
 function SingleProduct() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const {
     data: product,

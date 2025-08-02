@@ -13,39 +13,39 @@ function login() {
   };
   return (
     <div>
-      <div class="flex min-h-screen items-center justify-center bg-base-200">
-        <div class="w-full max-w-sm shadow-2xl bg-base-100 p-8 rounded-xl">
-          <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+      <div className="flex min-h-screen items-center justify-center bg-base-200">
+        <div className="w-full max-w-sm shadow-2xl bg-base-100 p-8 rounded-xl">
+          <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
           <form>
-            <div class="form-control mb-4">
-              <label class="label">
-                <span class="label-text">Email</span>
+            <div className="form-control mb-4">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="email@example.com"
-                class="input input-bordered"
+                className="input input-bordered"
                 required
               />
             </div>
-            <div class="form-control mb-6">
-              <label class="label">
-                <span class="label-text">Password</span>
+            <div className="form-control mb-6">
+              <label className="label">
+                <span className="label-text">Password</span>
               </label>
               <input
                 type="password"
                 placeholder="Enter your password"
-                class="input input-bordered"
+                className="input input-bordered"
                 required
               />
-              <label class="label">
+              <label className="label">
                 <Link to="/register" className="label-text-alt link link-hover">
                   Forgot Password
                 </Link>
               </label>
             </div>
-            <div class="form-control">
-              <button class="btn btn-primary">Login</button>
+            <div className="form-control">
+              <button className="btn btn-primary">Login</button>
             </div>
           </form>
         </div>

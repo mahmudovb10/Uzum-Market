@@ -12,29 +12,29 @@ function login() {
     };
   };
   return (
-    <div class="flex min-h-screen items-center justify-center bg-base-200">
-      <div class="w-full max-w-sm shadow-2xl bg-base-100 p-8 rounded-xl">
-        <h2 class="text-2xl font-bold text-center mb-6">Sign Up</h2>
+    <div className="flex min-h-screen items-center justify-center bg-base-200">
+      <div className="w-full max-w-sm shadow-2xl bg-base-100 p-8 rounded-xl">
+        <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
         <form>
-          <div class="form-control mb-4">
-            <label class="label">
-              <span class="label-text">Full Name</span>
+          <div className="form-control mb-4">
+            <label className="label">
+              <span className="label-text">Full Name</span>
             </label>
             <input
               type="text"
               placeholder="Your name"
-              class="input input-bordered"
+              className="input input-bordered"
               required
             />
           </div>
-          <div class="form-control mb-4">
-            <label class="label">
-              <span class="label-text">Email</span>
+          <div className="form-control mb-4">
+            <label className="label">
+              <span className="label-text">Email</span>
             </label>
             <input
               type="email"
               placeholder="email@example.com"
-              class="input input-bordered"
+              className="input input-bordered"
               required
             />
           </div>
@@ -45,22 +45,22 @@ function login() {
             <input
               type="password"
               placeholder="Create a password"
-              class="input input-bordered"
+              className="input input-bordered"
               required
             />
           </div>
-          <div class="form-control mb-6">
-            <label class="label">
-              <span class="label-text">Confirm Password</span>
+          <div className="form-control mb-6">
+            <label className="label">
+              <span className="label-text">Confirm Password</span>
             </label>
             <input
               type="password"
               placeholder="Repeat password"
-              class="input input-bordered"
+              className="input input-bordered"
               required
             />
           </div>
-          <div class="form-control">
+          <div className="form-control">
             <button class="btn btn-primary relative left-[6rem]">
               Create Account
             </button>

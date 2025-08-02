@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { GlobalContext } from "../context/globalContext";
 
 function Navbar() {
+  const { totalAmount } = useContext(GlobalContext);
+
   return (
     <header className="bg-base-200">
       <div className="navbar">
@@ -10,6 +13,7 @@ function Navbar() {
             <img src="/logo.png" alt="" className="w-70" />
           </a>
         </div>
+
         <div className="navbar-center">
           <ul className="menu menu-horizontal">
             <li>
@@ -23,10 +27,20 @@ function Navbar() {
             </li>
           </ul>
         </div>
+
         <div className="navbar-end">
-          <a href="">
-            <img src="/userLogo.svg" alt="" />
-          </a>
+          <NavLink to="/basket">
+            <div className="indicator">
+              {totalAmount > 0 && (
+                <span className="indicator-item badge badge-secondary">
+                  {totalAmount}
+                </span>
+              )}
+              <button className="btn">
+                <i className="fa-solid fa-basket-shopping"></i>
+              </button>
+            </div>
+          </NavLink>
         </div>
       </div>
     </header>

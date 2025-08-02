@@ -48,3 +48,7 @@ input:focus-within {
 a {
   text-decoration: none;
 }
+
+.indicator {
+  margin-right: 5rem;
+}

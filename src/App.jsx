@@ -1,16 +1,12 @@
-// Pages
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
-// Layouts
+import { useGlobalContext } from "./hooks/useGlobalContext";
+import Basket from "./pages/basket";
 
 import MainLayout from "./layouts/MainLayout";
-
-// React Router
 
 import {
   createBrowserRouter,
@@ -19,11 +15,10 @@ import {
 } from "react-router-dom";
 import SingleProduct from "./pages/SingleProduct";
 
-// Components
 import { ProtectedRoutes } from "./components/ProtectedRoutes";
 
 function App() {
-  let user = false;
+  const { user } = useGlobalContext();
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -44,6 +39,10 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/basket",
+          element: <Basket />,
         },
         {
           path: "/singleProduct/:id",
